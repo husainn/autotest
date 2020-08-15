@@ -8,6 +8,7 @@ suite = unittest.TestSuite()
 loader = unittest.TestLoader()
 suite.addTest(loader.loadTestsFromTestCase(TestHttpRequest))
 
-with open(result_path,'wb') as stream:
-    runner = HTMLTestRunner(stream,title='hugetest')
-    runner.run(suite)
+if __name__ == '__main__':
+    with open(result_path,'wb') as stream:
+        runner = HTMLTestRunner(stream,title='hugetest')
+        runner.run(suite)
